@@ -49,4 +49,3 @@ AddNote.propTypes = {
 };
 
 export default AddNote;
-
