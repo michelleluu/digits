@@ -7,7 +7,7 @@ import {
   HiddenField,
   LongTextField,
   SubmitField,
-  TextField
+  TextField,
 } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
