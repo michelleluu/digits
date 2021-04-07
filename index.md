@@ -1,3 +1,4 @@
+## digits
 ## Installation
 
 First, [install Meteor](https://www.meteor.com/install).
