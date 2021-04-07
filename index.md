@@ -1,4 +1,8 @@
-# Digits
+Digits is an application that allows users to 
+* register an account 
+* create and manage a set of contacts
+*  add a set of timestamped notes regarding their interactions with each contact
+
 ## Installation
 
 First, [install Meteor](https://www.meteor.com/install).
