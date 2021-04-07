@@ -38,11 +38,10 @@ meteor npm run start
 I20180227-13:33:02.716(-10)? Creating the default user(s)
 I20180227-13:33:02.742(-10)?   Creating user admin@foo.com.
 I20180227-13:33:02.743(-10)?   Creating user john@foo.com.
-I20180227-13:33:02.743(-10)? Creating default data.
-I20180227-13:33:02.743(-10)?   Adding: Basket (john@foo.com)
-I20180227-13:33:02.743(-10)?   Adding: Bicycle (john@foo.com)
-I20180227-13:33:02.743(-10)?   Adding: Banana (admin@foo.com)
-I20180227-13:33:02.744(-10)?   Adding: Boogie Board (admin@foo.com)
+I20180305-18:06:02.804(-10)? Creating default contacts.
+I20180305-18:06:02.804(-10)?   Adding: Johnson (john@foo.com)
+I20180305-18:06:02.804(-10)?   Adding: Casanova (john@foo.com)
+I20180305-18:06:02.804(-10)?   Adding: Binsted (admin@foo.com)
 => Started your app.
 
 => App running at: http://localhost:3000/
