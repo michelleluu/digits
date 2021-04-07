@@ -19,7 +19,7 @@ class ListContactsAdmin extends React.Component {
     return (
       <Container>
         <Header as="h2" textAlign="center" inverted>List Contacts (Admin)</Header>
-        <Card.Group>
+        <Card.Group centered>
           {this.props.contacts.map((contact, index) => <ContactAdmin key={index} contact={contact}/>)}
         </Card.Group>
       </Container>
