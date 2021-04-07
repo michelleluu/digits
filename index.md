@@ -1,91 +1,57 @@
-<title>digits</title>
-<meta name="generator" content="Jekyll v3.7.4" />
-<meta property="og:title" content="digits" />
-<meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://ics-software-engineering.github.io/digits/" />
-<meta property="og:url" content="https://ics-software-engineering.github.io/digits/" />
-<meta property="og:site_name" content="digits" />
-<script type="application/ld+json">
-{"@type":"WebSite","url":"https://ics-software-engineering.github.io/digits/","name":"digits","headline":"digits","@context":"http://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
+## Installation
 
-  </head>
+First, [install Meteor](https://www.meteor.com/install).
 
-  <body>
-    <div id="container">
-      <div class="inner">
+Second, go to [https://github.com/ics-software-engineering/meteor-application-template-react](https://github.com/ics-software-engineering/meteor-application-template-react), and click the "Use this template" button. Complete the dialog box to create a new repository that you own that is initialized with this template's files.
 
-        <header>
-          <h1>digits</h1>
-          <h2></h2>
-        </header>
-        <section id="downloads" class="clearfix">
-          
-	
-        </section>
-        <hr>
-        <section id="main_content">
-          <p><img src="doc/landing.png" /></p>
+Third, go to your newly created repository, and click the "Clone or download" button to download your new GitHub repo to your local file system.  Using [GitHub Desktop](https://desktop.github.com/) is a great choice if you use MacOS or Windows.
 
-<p>Digits is an application that allows users to:</p>
+Fourth, cd into the app/ directory of your local copy of the repo, and install third party libraries with:
 
-<ul>
-  <li>Register an account.</li>
-  <li>Create and manage a set of contacts.</li>
-  <li>Add a set of timestamped notes regarding their interactions with each contact.</li>
-</ul>
+```
+$ meteor npm install
+```
 
-<h3 id="installation">Installation</h3>
+## Running the system
 
-<p>First, <a href="https://www.meteor.com/install">install Meteor</a>.</p>
+Once the libraries are installed, you can run the application by invoking the "start" script in the [package.json file](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/app/package.json):
 
-<p>Second, <a href="https://github.com/philipmjohnson/digits">download a copy of Digits</a>. Note that Digits is a private repo and so you will need to request permission from the author to gain access to the repo.</p>
+```
+$ meteor npm run start
+```
 
-<p>Third, cd into the app directory install the required libraries with:</p>
+The first time you run the app, it will create some default users and data. Here is the output:
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ meteor npm install
-</code></pre></div></div>
+```
+meteor npm run start
 
-<p>Once the libraries are installed, you can run the application by invoking:</p>
+> meteor-application-template-react@ start /Users/philipjohnson/github/ics-software-engineering/meteor-application-template-react/app
+> meteor --no-release-check --settings ../config/settings.development.json
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ meteor npm run start
-</code></pre></div></div>
+[[[[[ ~/github/ics-software-engineering/meteor-application-template-react/app ]]]]]
 
-<p>The first time you run the app, it will create some default users and data. Here is the output:</p>
+=> Started proxy.
+=> Started MongoDB.
+I20180227-13:33:02.716(-10)? Creating the default user(s)
+I20180227-13:33:02.742(-10)?   Creating user admin@foo.com.
+I20180227-13:33:02.743(-10)?   Creating user john@foo.com.
+I20180227-13:33:02.743(-10)? Creating default data.
+I20180227-13:33:02.743(-10)?   Adding: Basket (john@foo.com)
+I20180227-13:33:02.743(-10)?   Adding: Bicycle (john@foo.com)
+I20180227-13:33:02.743(-10)?   Adding: Banana (admin@foo.com)
+I20180227-13:33:02.744(-10)?   Adding: Boogie Board (admin@foo.com)
+=> Started your app.
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>meteor npm run start
+=> App running at: http://localhost:3000/
+```
 
-&gt; meteor-application-template-react@ start /Users/philipjohnson/github/philipmjohnson/digits/app
-&gt; meteor --no-release-check --settings ../config/settings.development.json
 
-[[[[[ ~/github/philipmjohnson/digits/app ]]]]]
+### Note regarding "bcrypt warning":
 
-=&gt; Started proxy.                             
-=&gt; Started MongoDB.                           
-I20180305-18:06:02.764(-10)? Creating the default user(s)
-I20180305-18:06:02.803(-10)?   Creating user admin@foo.com.
-I20180305-18:06:02.803(-10)?   Creating user john@foo.com.
-I20180305-18:06:02.804(-10)? Creating default contacts.
-I20180305-18:06:02.804(-10)?   Adding: Johnson (john@foo.com)
-I20180305-18:06:02.804(-10)?   Adding: Casanova (john@foo.com)
-I20180305-18:06:02.804(-10)?   Adding: Binsted (admin@foo.com)
-=&gt; Started your app.
+You will also get the following message when you run this application:
 
-=&gt; App running at: http://localhost:3000/
-W20180305-18:06:02.805(-10)? (STDERR) Note: you are using a pure-JavaScript implementation of bcrypt.
-W20180305-18:06:02.805(-10)? (STDERR) While this implementation will work correctly, it is known to be
-W20180305-18:06:02.806(-10)? (STDERR) approximately three times slower than the native implementation.
-W20180305-18:06:02.806(-10)? (STDERR) In order to use the native implementation instead, run
-W20180305-18:06:02.806(-10)? (STDERR) 
-W20180305-18:06:02.806(-10)? (STDERR)   meteor npm install --save bcrypt
-W20180305-18:06:02.806(-10)? (STDERR) 
-W20180305-18:06:02.806(-10)? (STDERR) in the root directory of your application.
-
-</code></pre></div></div>
-
-<p><strong>Note regarding bcrypt warning.</strong> You will also get the following message when you run this application:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Note: you are using a pure-JavaScript implementation of bcrypt.
+```
+Note: you are using a pure-JavaScript implementation of bcrypt.
 While this implementation will work correctly, it is known to be
 approximately three times slower than the native implementation.
 In order to use the native implementation instead, run
@@ -93,77 +59,212 @@ In order to use the native implementation instead, run
   meteor npm install --save bcrypt
 
 in the root directory of your application.
-</code></pre></div></div>
+```
 
-<p>On some operating systems (particularly Windows), installing bcrypt is much more difficult than implied by the above message. Bcrypt is only used in Meteor for password checking, so the performance implications are negligible until your site has very high traffic. You can safely ignore this warning without any problems during initial stages of development.</p>
+On some operating systems (particularly Windows), installing bcrypt is much more difficult than implied by the above message. Bcrypt is only used in Meteor for password checking, so the performance implications are negligible until your site has very high traffic. You can safely ignore this warning without any problems during initial stages of development.
 
-<p>If all goes well, the template application will appear at <a href="http://localhost:3000">http://localhost:3000</a>.  You can login using the credentials in <a href="https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/config/settings.development.json">settings.development.json</a>, or else register a new account.</p>
+### Note regarding "MongoError: not master and slaveOk=false":
 
-<p>Lastly, you can run ESLint over the code in the imports/ directory with:</p>
+Intermittently, you may see the following error message in the console when the system starts up:
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>meteor npm run lint
-</code></pre></div></div>
+```
+MongoError: not master and slaveOk=false
+     at queryCallback (/Users/philipjohnson/.meteor/packages/npm-mongo/.3.1.1.1mmptof.qcqo++os+web.browser+web.browser.legacy+web.cordova/npm/node_modules/mongodb-core/lib/cursor.js:248:25)
+     at /Users/philipjohnson/.meteor/packages/npm-mongo/.3.1.1.1mmptof.qcqo++os+web.browser+web.browser.legacy+web.cordova/npm/node_modules/mongodb-core/lib/connection/pool.js:532:18
+     at _combinedTickCallback (internal/process/next_tick.js:131:7)
+     at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+```
 
-<h2 id="user-interface-walkthrough">User Interface Walkthrough</h2>
+While irritating, this message appears to be harmless and [possibly related to a race condition between the development instance of Mongo and Meteor](https://github.com/meteor/meteor/issues/9026#issuecomment-330850366). By harmless, I mean that in most cases, the console goes on to display `App running at: http://localhost:3000/` and no problems occur during run time.
 
-<h4 id="landing-page">Landing Page</h4>
+### Viewing the running app
 
-<p>When you first bring up the application, you will see the landing page that provides a brief introduction to the capabilities of Digits:</p>
+If all goes well, the template application will appear at [http://localhost:3000](http://localhost:3000).  You can login using the credentials in [settings.development.json](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/config/settings.development.json), or else register a new account.
 
-<p><img src="doc/landing.png" /></p>
+### ESLint
 
-<h4 id="register">Register</h4>
+You can verify that the code obeys our coding standards by running ESLint over the code in the imports/ directory with:
 
-<p>If you do not yet have an account on the system, you can register by clicking on “Login”, then “Sign Up”:</p>
+```
+meteor npm run lint
+```
 
-<p><img src="doc/register.png" /></p>
+## Walkthrough
 
-<h4 id="sign-in">Sign in</h4>
+The following sections describe the major features of this template.
 
-<p>Click on the Login link, then click on the Signin link to bring up the Sign In page which allows you to login:</p>
+### Directory structure
 
-<p><img src="doc/signin.png" /></p>
+The top-level directory structure is:
 
-<h4 id="user-home-page">User home page</h4>
+```
+app/        # holds the Meteor application sources
+config/     # holds configuration files, such as settings.development.json
+doc/        # holds developer documentation, user guides, etc.
+.gitignore  # don't commit IntelliJ project files, node_modules, and settings.production.json
+```
 
-<p>After successfully logging in, the system takes you to your home page. It is just like the landing page, but the NavBar contains links to list contact and add new contacts:</p>
+This structure separates documentation files (such as screenshots) and configuration files (such as the settings files) from the actual Meteor application.
 
-<p><img src="doc/home.png" /></p>
+The app/ directory has this structure:
 
-<h4 id="list-contacts">List Contacts</h4>
+```
+client/
+  main.html      # The boilerplate HTML with a "root" div to be manipulated by React.
+  main.js        # import startup files.
 
-<p>Clicking on the List Contacts link brings up a page that lists all of the contacts associated with the logged in user:</p>
+imports/
+  api/           # Define collections
+    stuff/       # The Stuffs collection definition
+  startup/       # Define code to run when system starts up (client-only, server-only, both)
+    client/
+    server/
+  ui/
+    layouts/     # Contains top-level layout (<App> component).
+    pages/       # Contains components for each page.
+    components/  # Contains page elements, some of which could appear on multiple pages.
 
-<p><img src="doc/list-contacts.png" /></p>
+node_modules/    # managed by npm
 
-<p>This page also allows the user to add timestamped “notes” detailing interactions they’ve had with the Contact.  For example:</p>
+public/          # static assets (like images) can go here.
 
-<p><img src="doc/list-contacts-note.png" /></p>
+server/
+   main.js       # import the server-side js files.
+```
 
-<h4 id="edit-contacts">Edit Contacts</h4>
+### Import conventions
 
-<p>From the List Contacts page, the user can click the “Edit” link associated with any Contact to bring up a page that allows that Contact information to be edited:</p>
+This system adheres to the Meteor guideline of putting all application code in the imports/ directory, and using client/main.js and server/main.js to import the code appropriate for the client and server in an appropriate order.
 
-<p><img src="doc/edit-contact.png" /></p>
+### Application functionality
 
-<h4 id="admin-mode">Admin mode</h4>
+The application implements a simple CRUD application for managing "Stuff", which is a Mongo Collection consisting of a name (String), a quantity (Number), and a condition (one of 'excellent', 'good', 'fair', or 'poor').
 
-<p>It is possible to designate one or more users as “Admins” through the settings file.  When a user has the Admin role, they get access to a special NavBar link that retrieves a page listing all Contacts associated with all users:</p>
+By default, each user only sees the Stuff that they have created.  However, the settings file enables you to define default accounts.  If you define a user with the role "admin", then that user gets access to a special page which lists all the Stuff defined by all users.
 
-<p><img src="doc/admin-page.png" /></p>
+#### Landing page
+
+When you retrieve the app at http://localhost:3000, this is what should be displayed:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/landing-page.png)
+
+The next step is to use the Login menu to either Login to an existing account or register a new account.
+
+#### Login page
+
+Clicking on the Login link, then on the Sign In menu item displays this page:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/signin-page.png)
+
+#### Register page
+
+Alternatively, clicking on the Login link, then on the Sign Up menu item displays this page:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/register-page.png)
 
 
-        </section>
+#### Landing (after Login) page, non-Admin user
 
-        <footer>
-        
-          digits is maintained by <a href="https://github.com/ics-software-engineering">ics-software-engineering</a><br>
-        
-          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
-        </footer>
+Once you log in (either to an existing account or by creating a new one), the navbar changes as follows:
 
-      </div>
-    </div>
+![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/landing-after-login-page.png)
 
-    
-  </body>
+You can now add new Stuff documents, and list the Stuff you have created. Note you cannot see any Stuff created by other users.
+
+#### Add Stuff page
+
+After logging in, here is the page that allows you to add new Stuff:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/add-stuff-page.png)
+
+#### List Stuff page
+
+After logging in, here is the page that allows you to list all the Stuff you have created:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/list-stuff-page.png)
+
+You click the "Edit" link to go to the Edit Stuff page, shown next.
+
+#### Edit Stuff page
+
+After clicking on the "Edit" link associated with an item, this page displays that allows you to change and save it:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/edit-stuff-page.png)
+
+#### Landing (after Login), Admin user
+
+You can define an "admin" user in the settings.json file. This user, after logging in, gets a special entry in the navbar:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/admin-landing-page.png)
+
+#### Admin page (list all users stuff)
+
+To provide a simple example of a "super power" for Admin users, the Admin page lists all of the Stuff by all of the users:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/admin-list-stuff-page.png)
+
+Note that non-admin users cannot get to this page, even if they type in the URL by hand.
+
+### Collections
+
+The application implements a single Collection called "Stuffs". Each Stuffs document has the following fields: name, quantity, condition, and username.
+
+The Stuffs collection is defined in [imports/api/stuff/stuff.js](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/app/imports/api/stuff/stuff.js).
+
+The Stuffs collection is initialized in [imports/startup/server/Mongo.js](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/app/imports/startup/server/Mongo.js).
+
+### CSS
+
+The application uses the [React implementation of Semantic UI](http://react.semantic-ui.com/).
+
+### Routing
+
+For display and navigation among its four pages, the application uses [React Router](https://reacttraining.com/react-router/).
+
+Routing is defined in [imports/ui/layouts/App.jsx](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/app/imports/ui/layouts/App.jsx).
+
+
+### Authentication
+
+For authentication, the application uses the Meteor accounts package.
+
+When the application is run for the first time, a settings file (such as [config/settings.development.json](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/config/settings.development.json)) should be passed to Meteor. That will lead to a default account being created through the code in [imports/startup/server/accounts.js](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/app/imports/startup/server/accounts.js).
+
+The application allows users to register and create new accounts at any time.
+
+### Authorization
+
+Only logged in users can manipulate Stuff documents (but any registered user can manipulate any Stuff document, even if they weren't the user that created it.)
+
+### Configuration
+
+The [config](https://github.com/ics-software-engineering/meteor-application-template-react/tree/master/config) directory is intended to hold settings files.  The repository contains one file: [config/settings.development.json](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/config/settings.development.json).
+
+The [.gitignore](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/.gitignore) file prevents a file named settings.production.json from being committed to the repository. So, if you are deploying the application, you can put settings in a file named settings.production.json and it will not be committed.
+
+### Quality Assurance
+
+#### ESLint
+
+The application includes a [.eslintrc](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/app/.eslintrc) file to define the coding style adhered to in this application. You can invoke ESLint from the command line as follows:
+
+```
+[~/meteor-application-template-react/app]-> meteor npm run lint
+
+> meteor-application-template-react@ lint /Users/philipjohnson/meteor-application-template-react/app
+> eslint --quiet ./imports
+```
+
+ESLint should run without generating any errors.
+
+It's significantly easier to do development with ESLint integrated directly into your IDE (such as IntelliJ).
+
+## Screencasts
+
+For more information about this system, please watch one or more of the following screencasts. Note that the current source code might differ slightly from the code in these screencasts, but the changes should be very minor.
+
+  * [Walkthrough of system user interface (5 min)](https://www.youtube.com/watch?v=shYgqco1AUs)
+  * [Data and accounts structure and initialization (15 min)](https://www.youtube.com/watch?v=p9dvM6MdCGs)
+  * [Navigation, routing, pages, components (23 min)](https://www.youtube.com/watch?v=DAv0UjS0VjQ)
+  * [Forms (25 min)](https://www.youtube.com/watch?v=z02076QgDA8)
+  * [Authorization, authentication, and roles (10 min)](https://www.youtube.com/watch?v=_i1dgcP0zoI)
