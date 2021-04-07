@@ -5,7 +5,7 @@ description: Digits is an application that allows users to:
 * Add a set of timestamped notes regarding their interactions with each contact.
 google_analytics:
 show_downloads: true
-theme: jekyll-theme-cayman
+theme: jekyll-theme-tactile
 
 gems:
   - jekyll-mentions
