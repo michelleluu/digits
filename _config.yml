@@ -1,8 +1,5 @@
 title: digits
-description: Digits is an application that allows users to:
-* Register an account.
-* Create and manage a set of contacts.
-* Add a set of timestamped notes regarding their interactions with each contact.
+description: Digits is an application that allows users to register an account, create and manage a set of contacts, and add a set of timestamped notes regarding their interactions with each contact
 google_analytics:
 show_downloads: true
 theme: jekyll-theme-tactile
