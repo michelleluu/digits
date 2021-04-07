@@ -80,32 +80,32 @@ While irritating, this message appears to be harmless and [possibly related to a
 ## User Interface Walkthrough
 ### Landing Page
 When you first bring up the application, you will see the landing page that provides a brief introduction to the capabilities of Digits:
-<img src="doc/persian-landing.png">
+<img src="doc/persian-landing.PNG">
 
 ### Register
 If you do not yet have an account on the system, you can register by clicking on “Login”, then “Sign Up”:
-<img src="doc/persian-signup.png">
+<img src="doc/persian-signup.PNG">
 
 ### Sign in 
 Click on the Login link, then click on the Signin link to bring up the Sign In page which allows you to login:
-<img src="doc/persian-signin.png">
+<img src="doc/persian-signin.PNG">
 
 ### User home page 
 After successfully logging in, the system takes you to your home page. It is just like the landing page, but the NavBar contains links to list contact and add new contacts:
-<img src="doc/persian-userhome.png">
+<img src="doc/persian-userhome.PNG">
 
 ### List Contacts
 Clicking on the List Contacts link brings up a page that lists all of the contacts associated with the logged in user:
-<img src="doc/persian-userlist.png">
+<img src="doc/persian-userlist.PNG">
 This page also allows the user to add timestamped “notes” detailing interactions they’ve had with the Contact. For example:
-<img src="doc/persian-timestamp.png">
+<img src="doc/persian-timestamp.PNG">
 
 ### Edit Contacts
 From the List Contacts page, the user can click the “Edit” link associated with any Contact to bring up a page that allows that Contact information to be edited:
-<img src="doc/persian-edit.png">
+<img src="doc/persian-edit.PNG">
 
 ### Admin mode
 It is possible to designate one or more users as “Admins” through the settings file. When a user has the Admin role, they get access to a special NavBar link that retrieves a page listing all Contacts associated with all users:
-<img src="doc/persian-admin.png">
+<img src="doc/persian-admin.PNG">
 
 
