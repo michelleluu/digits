@@ -1,5 +1,8 @@
-title: meteor-application-template-react
-description: A template for quickly starting Meteor application development
+title: digits
+description: Digits is an application that allows users to:
+* Register an account.
+* Create and manage a set of contacts.
+* Add a set of timestamped notes regarding their interactions with each contact.
 google_analytics:
 show_downloads: true
 theme: jekyll-theme-cayman
