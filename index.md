@@ -77,194 +77,35 @@ MongoError: not master and slaveOk=false
 
 While irritating, this message appears to be harmless and [possibly related to a race condition between the development instance of Mongo and Meteor](https://github.com/meteor/meteor/issues/9026#issuecomment-330850366). By harmless, I mean that in most cases, the console goes on to display `App running at: http://localhost:3000/` and no problems occur during run time.
 
-### Viewing the running app
+## User Interface Walkthrough
+### Landing Page
+When you first bring up the application, you will see the landing page that provides a brief introduction to the capabilities of Digits:
+<img src="doc/persian-landing.png">
 
-If all goes well, the template application will appear at [http://localhost:3000](http://localhost:3000).  You can login using the credentials in [settings.development.json](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/config/settings.development.json), or else register a new account.
+### Register
+If you do not yet have an account on the system, you can register by clicking on “Login”, then “Sign Up”:
+<img src="doc/persian-signup.png">
 
-### ESLint
+### Sign in 
+Click on the Login link, then click on the Signin link to bring up the Sign In page which allows you to login:
+<img src="doc/persian-signin.png">
 
-You can verify that the code obeys our coding standards by running ESLint over the code in the imports/ directory with:
+### User home page 
+After successfully logging in, the system takes you to your home page. It is just like the landing page, but the NavBar contains links to list contact and add new contacts:
+<img src="doc/persian-userhome.png">
 
-```
-meteor npm run lint
-```
+### List Contacts
+Clicking on the List Contacts link brings up a page that lists all of the contacts associated with the logged in user:
+<img src="doc/persian-userlist.png">
+This page also allows the user to add timestamped “notes” detailing interactions they’ve had with the Contact. For example:
+<img src="doc/persian-timestamp.png">
 
-## Walkthrough
+### Edit Contacts
+From the List Contacts page, the user can click the “Edit” link associated with any Contact to bring up a page that allows that Contact information to be edited:
+<img src="doc/persian-edit.png">
 
-The following sections describe the major features of this template.
+### Admin mode
+It is possible to designate one or more users as “Admins” through the settings file. When a user has the Admin role, they get access to a special NavBar link that retrieves a page listing all Contacts associated with all users:
+<img src="doc/persian-admin.png">
 
-### Directory structure
 
-The top-level directory structure is:
-
-```
-app/        # holds the Meteor application sources
-config/     # holds configuration files, such as settings.development.json
-doc/        # holds developer documentation, user guides, etc.
-.gitignore  # don't commit IntelliJ project files, node_modules, and settings.production.json
-```
-
-This structure separates documentation files (such as screenshots) and configuration files (such as the settings files) from the actual Meteor application.
-
-The app/ directory has this structure:
-
-```
-client/
-  main.html      # The boilerplate HTML with a "root" div to be manipulated by React.
-  main.js        # import startup files.
-
-imports/
-  api/           # Define collections
-    stuff/       # The Stuffs collection definition
-  startup/       # Define code to run when system starts up (client-only, server-only, both)
-    client/
-    server/
-  ui/
-    layouts/     # Contains top-level layout (<App> component).
-    pages/       # Contains components for each page.
-    components/  # Contains page elements, some of which could appear on multiple pages.
-
-node_modules/    # managed by npm
-
-public/          # static assets (like images) can go here.
-
-server/
-   main.js       # import the server-side js files.
-```
-
-### Import conventions
-
-This system adheres to the Meteor guideline of putting all application code in the imports/ directory, and using client/main.js and server/main.js to import the code appropriate for the client and server in an appropriate order.
-
-### Application functionality
-
-The application implements a simple CRUD application for managing "Stuff", which is a Mongo Collection consisting of a name (String), a quantity (Number), and a condition (one of 'excellent', 'good', 'fair', or 'poor').
-
-By default, each user only sees the Stuff that they have created.  However, the settings file enables you to define default accounts.  If you define a user with the role "admin", then that user gets access to a special page which lists all the Stuff defined by all users.
-
-#### Landing page
-
-When you retrieve the app at http://localhost:3000, this is what should be displayed:
-
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/landing-page.png)
-
-The next step is to use the Login menu to either Login to an existing account or register a new account.
-
-#### Login page
-
-Clicking on the Login link, then on the Sign In menu item displays this page:
-
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/signin-page.png)
-
-#### Register page
-
-Alternatively, clicking on the Login link, then on the Sign Up menu item displays this page:
-
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/register-page.png)
-
-
-#### Landing (after Login) page, non-Admin user
-
-Once you log in (either to an existing account or by creating a new one), the navbar changes as follows:
-
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/landing-after-login-page.png)
-
-You can now add new Stuff documents, and list the Stuff you have created. Note you cannot see any Stuff created by other users.
-
-#### Add Stuff page
-
-After logging in, here is the page that allows you to add new Stuff:
-
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/add-stuff-page.png)
-
-#### List Stuff page
-
-After logging in, here is the page that allows you to list all the Stuff you have created:
-
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/list-stuff-page.png)
-
-You click the "Edit" link to go to the Edit Stuff page, shown next.
-
-#### Edit Stuff page
-
-After clicking on the "Edit" link associated with an item, this page displays that allows you to change and save it:
-
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/edit-stuff-page.png)
-
-#### Landing (after Login), Admin user
-
-You can define an "admin" user in the settings.json file. This user, after logging in, gets a special entry in the navbar:
-
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/admin-landing-page.png)
-
-#### Admin page (list all users stuff)
-
-To provide a simple example of a "super power" for Admin users, the Admin page lists all of the Stuff by all of the users:
-
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/admin-list-stuff-page.png)
-
-Note that non-admin users cannot get to this page, even if they type in the URL by hand.
-
-### Collections
-
-The application implements a single Collection called "Stuffs". Each Stuffs document has the following fields: name, quantity, condition, and username.
-
-The Stuffs collection is defined in [imports/api/stuff/stuff.js](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/app/imports/api/stuff/stuff.js).
-
-The Stuffs collection is initialized in [imports/startup/server/Mongo.js](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/app/imports/startup/server/Mongo.js).
-
-### CSS
-
-The application uses the [React implementation of Semantic UI](http://react.semantic-ui.com/).
-
-### Routing
-
-For display and navigation among its four pages, the application uses [React Router](https://reacttraining.com/react-router/).
-
-Routing is defined in [imports/ui/layouts/App.jsx](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/app/imports/ui/layouts/App.jsx).
-
-
-### Authentication
-
-For authentication, the application uses the Meteor accounts package.
-
-When the application is run for the first time, a settings file (such as [config/settings.development.json](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/config/settings.development.json)) should be passed to Meteor. That will lead to a default account being created through the code in [imports/startup/server/accounts.js](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/app/imports/startup/server/accounts.js).
-
-The application allows users to register and create new accounts at any time.
-
-### Authorization
-
-Only logged in users can manipulate Stuff documents (but any registered user can manipulate any Stuff document, even if they weren't the user that created it.)
-
-### Configuration
-
-The [config](https://github.com/ics-software-engineering/meteor-application-template-react/tree/master/config) directory is intended to hold settings files.  The repository contains one file: [config/settings.development.json](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/config/settings.development.json).
-
-The [.gitignore](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/.gitignore) file prevents a file named settings.production.json from being committed to the repository. So, if you are deploying the application, you can put settings in a file named settings.production.json and it will not be committed.
-
-### Quality Assurance
-
-#### ESLint
-
-The application includes a [.eslintrc](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/app/.eslintrc) file to define the coding style adhered to in this application. You can invoke ESLint from the command line as follows:
-
-```
-[~/meteor-application-template-react/app]-> meteor npm run lint
-
-> meteor-application-template-react@ lint /Users/philipjohnson/meteor-application-template-react/app
-> eslint --quiet ./imports
-```
-
-ESLint should run without generating any errors.
-
-It's significantly easier to do development with ESLint integrated directly into your IDE (such as IntelliJ).
-
-## Screencasts
-
-For more information about this system, please watch one or more of the following screencasts. Note that the current source code might differ slightly from the code in these screencasts, but the changes should be very minor.
-
-  * [Walkthrough of system user interface (5 min)](https://www.youtube.com/watch?v=shYgqco1AUs)
-  * [Data and accounts structure and initialization (15 min)](https://www.youtube.com/watch?v=p9dvM6MdCGs)
-  * [Navigation, routing, pages, components (23 min)](https://www.youtube.com/watch?v=DAv0UjS0VjQ)
-  * [Forms (25 min)](https://www.youtube.com/watch?v=z02076QgDA8)
-  * [Authorization, authentication, and roles (10 min)](https://www.youtube.com/watch?v=_i1dgcP0zoI)
